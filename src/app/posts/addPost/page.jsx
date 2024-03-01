@@ -26,11 +26,8 @@ export default function NewPostPage() {
       <label htmlFor="content" className="label">Content</label>
       <input id="content" name="content" type="text" className="input" />
       <button type="submit" className="button">Add Post</button>
-      <Link href="/posts">Back to Posts</Link>
+      <Link className = "button" href="/posts">Back to Posts</Link>
     </form>
-    
   )
 }
-      {/* <Link href="/posts">
-        <a>Back to Posts</a>
-      </Link> */}
+

@@ -10,6 +10,8 @@ export default function Nav() {
             <Link href="/" className="nav-link">Home</Link>
             <Link href="/posts" className="nav-link">Posts</Link>
             <Link href="/posts/addPost" className="nav-link">New Post</Link>
+            <Link href="/categories" className="nav-link">Categories</Link>
+            <Link href="/categories/addcategory" className="nav-link">New Category</Link>
             <Link href="/about" className="nav-link">About</Link>
           </nav>
         </div>

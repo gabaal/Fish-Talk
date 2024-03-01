@@ -37,7 +37,7 @@ create tables SQL:
 
 CREATE TABLE categories (
     category_id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
+    category VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE posts (
@@ -57,25 +57,25 @@ CREATE TABLE comments (
 
 And seed for testing:
 -- Inserting categories
-INSERT INTO categories (name) VALUES ('fish'), ('plants'), ('aquariums');
+INSERT INTO categories (category) VALUES ('fish'), ('plants'), ('aquariums');
 
 -- Inserting posts for the "fish" category
 INSERT INTO posts (title, content, category_id) 
 VALUES 
-('Types of Fish', 'Learn about different types of fish for your aquarium.', (SELECT category_id FROM categories WHERE name = 'fish')),
-('Feeding Fish', 'Tips and tricks for feeding your fish.', (SELECT category_id FROM categories WHERE name = 'fish'));
+('Types of Fish', 'Learn about different types of fish for your aquarium.', (SELECT category_id FROM categories WHERE category = 'fish')),
+('Feeding Fish', 'Tips and tricks for feeding your fish.', (SELECT category_id FROM categories WHERE category = 'fish'));
 
 -- Inserting posts for the "plants" category
 INSERT INTO posts (title, content, category_id) 
 VALUES 
-('Aquarium Plants Guide', 'A comprehensive guide to aquarium plants.', (SELECT category_id FROM categories WHERE name = 'plants')),
-('Plant Care', 'Tips for maintaining healthy aquarium plants.', (SELECT category_id FROM categories WHERE name = 'plants'));
+('Aquarium Plants Guide', 'A comprehensive guide to aquarium plants.', (SELECT category_id FROM categories WHERE category = 'plants')),
+('Plant Care', 'Tips for maintaining healthy aquarium plants.', (SELECT category_id FROM categories WHERE category = 'plants'));
 
 -- Inserting posts for the "aquariums" category
 INSERT INTO posts (title, content, category_id) 
 VALUES 
-('Choosing an Aquarium', 'Factors to consider when selecting an aquarium.', (SELECT category_id FROM categories WHERE name = 'aquariums')),
-('Aquarium Setup', 'Guide to setting up your aquarium.', (SELECT category_id FROM categories WHERE name = 'aquariums'));
+('Choosing an Aquarium', 'Factors to consider when selecting an aquarium.', (SELECT category_id FROM categories WHERE category = 'aquariums')),
+('Aquarium Setup', 'Guide to setting up your aquarium.', (SELECT category_id FROM categories WHERE category = 'aquariums'));
 
 -- Add comments to posts for the "fish" category
 INSERT INTO comments (post_id, comment_text) 

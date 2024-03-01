@@ -26,7 +26,8 @@ export default async function PostPage({ params }) {
           {result.rows.map(comment => (
             <p key={comment.comment_id} className="comment">{comment.comment_text}</p> 
           ))}
-          <Link href="/posts" className="link">Back to posts</Link>
+          <Link className="button"  href={`/posts/${params.id}/comments`}>Add a Comment</Link>
+          <Link className="button link"  href="/posts">Back to posts</Link>
         </>
       ) : (
         <p>Loading...</p>

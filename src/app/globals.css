@@ -75,10 +75,11 @@ html, body {
 
 .button {
   display: block;
+  width: 175px;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
-  border: none;
+  margin: 15px;
   border-radius: 5px;
   cursor: pointer;
 }
