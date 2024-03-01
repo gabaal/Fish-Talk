@@ -1,9 +1,11 @@
+
 import Link from "next/link"
 import { sql } from "@vercel/postgres";
-
+import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
 
 export default async function PostPage({ params }) {
-  // Fetch post and comments from the database
+
   const result = await sql.query(`
     SELECT posts.*, comments.comment_text
     FROM posts
@@ -11,7 +13,7 @@ export default async function PostPage({ params }) {
     WHERE posts.post_id = ${params.id}
   `);
   
-  // Extract post data from the result
+
   const post = result.rows[0];
 
   return (
@@ -27,7 +29,7 @@ export default async function PostPage({ params }) {
             <p key={comment.comment_id} className="comment">{comment.comment_text}</p> 
           ))}
           <Link className="button"  href={`/posts/${params.id}/comments`}>Add a Comment</Link>
-          <Link className="button link"  href="/posts">Back to posts</Link>
+          <Link className="button"  href="/posts">Back to posts</Link>
         </>
       ) : (
         <p>Loading...</p>

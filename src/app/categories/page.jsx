@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { sql } from "@vercel/postgres"
 
-
 export default async function Categories() {
-  const posts = await sql`
+  
+  const categories = await sql`
     SELECT *
     FROM categories
   `;
@@ -11,14 +11,15 @@ export default async function Categories() {
   return (
     <div className="container">
       <h1 className="title">Categories</h1>
-      <ul className="postList">
-        {posts.rows.map((post) => (
-          <div key={post.category_id} className="postItem">
-            <h2 className="postTitle">{post.category}</h2>
+      <ul className= "postList">
+        {categories.rows.map((category) => (
+          <div key={category.category_id} className="postItem">
+            <h2 className="postTitle">{category.category}</h2>
+            <Link  className="button"  href={`/categories/${category.category_id}`}>View Posts</Link>
           </div>
         ))}
       </ul>
-      <Link className = "button" href="/categories/addcategory">Add a category</Link>
+      <Link className="button" href="/categories/addcategory">Add a category</Link>
     </div>
   );
 }

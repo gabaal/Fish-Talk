@@ -15,13 +15,14 @@ export default function NewCommentPage({ params }) {
         INSERT INTO comments (post_id, comment_text)
         VALUES (${params.id}, ${comment})
       `;
-
+      revalidatePath(`/posts/${params.id}`)
+      redirect(`/posts/${params.id}`)
   }
   
   return (
     <form action={handleSaveComment} className="form">
       <label htmlFor="comment" className="label">Comment</label>
-      <input id="comment" name="comment" type="text" className="input" />
+      <input id="comment" name="comment" type="text" className="input" required/>
       <button type="submit" className="button">Add Comment</button>
       <Link className="button" href={`/posts/${params.id}`}>Back to Post</Link>
     </form>
