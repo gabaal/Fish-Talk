@@ -25,7 +25,7 @@ export default async function Posts({ searchParams}) {
             <h2 className="postTitle">{post.title}</h2>
             <p className="postCategory">Category: {post.category}</p>
             <p className="postExcerpt">{post.content_excerpt}...</p>
-            <Link  className="button readMore"  href={`/posts/${post.post_id}`}>Read More</Link>
+            <Link  className="button"  href={`/posts/${post.post_id}`}>Read More</Link>
           </div>
         ))}
       </ul>
