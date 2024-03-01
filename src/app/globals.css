@@ -9,6 +9,27 @@ html, body {
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size:26px;
+}
+
+p {
+  font-size: 18px;
+}
+
+a.button {
+  padding: 5px;
+  margin: 25px;
+  
+}
+.postCategory{
+  font-style: italic
+  
+}
 
 .header {
   background-color: #00ABE4;
@@ -51,7 +72,7 @@ html, body {
 
 
 .title {
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
@@ -74,7 +95,7 @@ html, body {
 }
 
 .button {
-  display: block;
+  display: inline;
   width: 200px;
   padding: 10px 20px;
   background-color: #007bff;

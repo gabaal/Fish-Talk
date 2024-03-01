@@ -61,36 +61,36 @@ CREATE TABLE comments (
 ## And seed for testing:
 
 ### Inserting categories
-INSERT INTO categories (category) VALUES ('fish'), ('plants'), ('aquariums');
+INSERT INTO categories (category) VALUES ('fish'), ('plants'), ('aquariums'), ('Equipment');
 
 ### Inserting posts for the "fish" category
 INSERT INTO posts (title, content, category_id) 
 VALUES 
-('Types of Fish', 'Learn about different types of fish for your aquarium.', (SELECT category_id FROM categories WHERE category = 'fish')),
-('Feeding Fish', 'Tips and tricks for feeding your fish.', (SELECT category_id FROM categories WHERE category = 'fish'));
+('Types of Fish', 'Learn about different types of fish for your aquarium. Quisque id diam vel quam elementum pulvinar. At risus viverra adipiscing at in tellus integer feugiat scelerisque.', (SELECT category_id FROM categories WHERE category = 'fish')),
+('Feeding Fish', 'Tips and tricks for feeding your fish. Quisque id diam vel quam elementum pulvinar. At risus viverra adipiscing at in tellus integer feugiat scelerisque.', (SELECT category_id FROM categories WHERE category = 'fish'));
 
 ### Inserting posts for the "plants" category
 INSERT INTO posts (title, content, category_id) 
 VALUES 
-('Aquarium Plants Guide', 'A comprehensive guide to aquarium plants.', (SELECT category_id FROM categories WHERE category = 'plants')),
-('Plant Care', 'Tips for maintaining healthy aquarium plants.', (SELECT category_id FROM categories WHERE category = 'plants'));
+('Aquarium Plants Guide', 'A comprehensive guide to aquarium plants. Quisque id diam vel quam elementum pulvinar. At risus viverra adipiscing at in tellus integer feugiat scelerisque.', (SELECT category_id FROM categories WHERE category = 'plants')),
+('Plant Care', 'Tips for maintaining healthy aquarium plants. Nullam eget felis eget nunc.', (SELECT category_id FROM categories WHERE category = 'plants'));
 
 ### Inserting posts for the "aquariums" category
 INSERT INTO posts (title, content, category_id) 
 VALUES 
-('Choosing an Aquarium', 'Factors to consider when selecting an aquarium.', (SELECT category_id FROM categories WHERE category = 'aquariums')),
-('Aquarium Setup', 'Guide to setting up your aquarium.', (SELECT category_id FROM categories WHERE category = 'aquariums'));
+('Choosing an Aquarium', 'Factors to consider when selecting an aquarium. Vitae justo eget magna fermentum iaculis eu non diam. Convallis convallis tellus id interdum velit laoreet id. Hendrerit gravida rutrum quisque non tellus orci ac auctor. ', (SELECT category_id FROM categories WHERE category = 'aquariums')),
+('Aquarium Setup', 'Guide to setting up your aquarium. At ultrices mi tempus imperdiet nulla malesuada pellentesque.', (SELECT category_id FROM categories WHERE category = 'aquariums'));
 
 ### Add comments to posts for the "fish" category
 INSERT INTO comments (post_id, comment_text) 
 VALUES 
-((SELECT post_id FROM posts WHERE title = 'Types of Fish'), 'Great information, thanks for sharing!'),
-((SELECT post_id FROM posts WHERE title = 'Types of Fish'), 'I have a question about freshwater fish.');
+((SELECT post_id FROM posts WHERE title = 'Types of Fish'), 'Great information, thanks for sharing! Dui vivamus arcu felis bibendum ut tristique et egestas quis. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Lorem ipsum dolor sit amet consectetur adipiscing elit.'),
+((SELECT post_id FROM posts WHERE title = 'Types of Fish'), 'I have a question about freshwater fish. Eget mi proin sed libero enim sed. Lacus vestibulum sed arcu non odio.');
 
 INSERT INTO comments (post_id, comment_text) 
 VALUES 
-((SELECT post_id FROM posts WHERE title = 'Feeding Fish'), 'Very helpful tips, especially for beginners!'),
-((SELECT post_id FROM posts WHERE title = 'Feeding Fish'), 'Do you have any recommendations for feeding tropical fish?');
+((SELECT post_id FROM posts WHERE title = 'Feeding Fish'), 'Very helpful tips, especially for beginners! Justo eget magna fermentum iaculis eu non. Scelerisque eleifend donec pretium vulputate sapien nec. Nulla facilisi cras fermentum odio. Augue mauris augue neque gravida in.'),
+((SELECT post_id FROM posts WHERE title = 'Feeding Fish'), 'Do you have any recommendations for feeding tropical fish? Sit amet tellus cras adipiscing. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Quam vulputate dignissim suspendisse in est. Mauris ultrices eros in cursus.');
 
 ### Add comments to posts for the "plants" category
 INSERT INTO comments (post_id, comment_text) 
@@ -100,16 +100,16 @@ VALUES
 
 INSERT INTO comments (post_id, comment_text) 
 VALUES 
-((SELECT post_id FROM posts WHERE title = 'Plant Care'), 'How often should I trim my aquarium plants?'),
-((SELECT post_id FROM posts WHERE title = 'Plant Care'), 'What's the best way to deal with algae in a planted tank?');
+((SELECT post_id FROM posts WHERE title = 'Plant Care'), 'How often should I trim my aquarium plants? Morbi tristique senectus et netus et malesuada fames. Sit amet mauris commodo quis imperdiet massa. Nam at lectus urna duis convallis convallis tellus.'),
+((SELECT post_id FROM posts WHERE title = 'Plant Care'), 'Whats the best way to deal with algae in a planted tank? Nibh tortor id aliquet lectus proin. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Tellus molestie nunc non blandit massa. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.');
 
 ### Add comments to posts for the "aquariums" category
 INSERT INTO comments (post_id, comment_text) 
 VALUES 
-((SELECT post_id FROM posts WHERE title = 'Choosing an Aquarium'), 'I never thought about the importance of tank size before.'),
-((SELECT post_id FROM posts WHERE title = 'Choosing an Aquarium'), 'What size tank do you recommend for beginners?');
+((SELECT post_id FROM posts WHERE title = 'Choosing an Aquarium'), 'I never thought about the importance of tank size before. Natoque penatibus et magnis dis parturient.'),
+((SELECT post_id FROM posts WHERE title = 'Choosing an Aquarium'), 'What size tank do you recommend for beginners? Non enim praesent elementum facilisis. Imperdiet dui accumsan sit amet nulla facilisi. Iaculis at erat pellentesque adipiscing commodo. Urna nec tincidunt praesent semper feugiat nibh. Urna porttitor rhoncus dolor purus non. Ornare lectus sit amet est placerat in egestas.');
 
 INSERT INTO comments (post_id, comment_text) 
 VALUES 
-((SELECT post_id FROM posts WHERE title = 'Aquarium Setup'), 'This guide made setting up my first tank a breeze!'),
-((SELECT post_id FROM posts WHERE title = 'Aquarium Setup'), 'Do you have any tips for cycling a new aquarium?');
+((SELECT post_id FROM posts WHERE title = 'Aquarium Setup'), 'This guide made setting up my first tank a breeze! Erat pellentesque adipiscing commodo elit at. Volutpat est velit egestas dui id ornare arcu odio.'),
+((SELECT post_id FROM posts WHERE title = 'Aquarium Setup'), 'Do you have any tips for cycling a new aquarium? Magna fringilla urna porttitor rhoncus dolor purus. Aliquet lectus proin nibh nisl condimentum id venenatis a.');
