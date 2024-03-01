@@ -6,6 +6,7 @@ export default async function Posts({ searchParams}) {
     SELECT posts.*, categories.category as category, LEFT(posts.content, 30) AS content_excerpt
     FROM Posts
     LEFT JOIN categories ON posts.category_id = categories.category_id
+    ORDER BY LOWER (title) ASC
   `;
   if (searchParams.sort === "desc") {
     posts.rows.reverse();
@@ -14,13 +15,13 @@ export default async function Posts({ searchParams}) {
   return (
     <div className="container">
       <h1 className="title">Posts</h1>
-      <Link href="/posts?sort=asc">Sort ascending</Link> - <Link href="/posts?sort=desc">
+      <Link className="button" href="/posts?sort=asc">Sort ascending</Link><Link className="button" href="/posts?sort=desc">
         Sort descending
       </Link>
       <ul className="postList">
         {posts.rows.map((post) => (
           <div key={post.post_id} className="postItem">
-            <h1>{post.post_id}</h1>
+
             <h2 className="postTitle">{post.title}</h2>
             <p className="postCategory">Category: {post.category}</p>
             <p className="postExcerpt">{post.content_excerpt}...</p>
