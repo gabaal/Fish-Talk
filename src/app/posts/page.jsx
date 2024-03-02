@@ -13,11 +13,12 @@ export default async function Posts({ searchParams}) {
   }
 
   return (
-    <div className="container">
+    <div>
       <h1 className="title">Posts</h1>
       <Link className="button" href="/posts?sort=asc">Sort ascending</Link><Link className="button" href="/posts?sort=desc">
         Sort descending
       </Link>
+      <Link  className="button" href="/posts/addPost">New Post</Link>
       <ul className="postList">
         {posts.rows.map((post) => (
           <div key={post.post_id} className="postItem">

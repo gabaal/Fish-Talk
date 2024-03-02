@@ -9,7 +9,7 @@ export default async function Categories() {
   `;
 
   return (
-    <div className="container">
+    <div>
       <h1 className="title">Categories</h1>
       <ul className= "postList">
         {categories.rows.map((category) => (

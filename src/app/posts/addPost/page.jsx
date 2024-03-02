@@ -23,10 +23,10 @@ export default function NewPostPage() {
     <div>
     <h1 className="title">Add a new post</h1>
     <form action={handleSavePost} className="form">
-      <label htmlFor="title" className="label">Title</label>
-      <input id="title" name="title" type="text" className="input" required/>
-      <label htmlFor="content" className="label">Content</label>
-      <input id="content" name="content" type="text" className="input" required/>
+      <label htmlFor="title" className="label"></label>
+      <input id="title" name="title" type="text" className="input" placeholder="Post title" required/>
+      <label htmlFor="content" className="label"></label>
+      <input id="content" name="content" type="text" className="input" placeholder="Post content" required/>
       <button type="submit" className="button">Add Post</button>
       <Link className = "button" href="/posts">Back to Posts</Link>
     </form>
