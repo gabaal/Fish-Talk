@@ -3,7 +3,7 @@ import Link from "next/link"
 import { sql } from "@vercel/postgres";
 import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
-
+import DeleteButton from "@/components/DeleteButton"
 export default async function PostPage({ params }) {
 
   const result = await sql.query(`
@@ -30,6 +30,7 @@ export default async function PostPage({ params }) {
           ))}
           <Link className="button"  href={`/posts/${params.id}/comments`}>Add a Comment</Link>
           <Link className="button"  href="/posts">Back to posts</Link>
+          <DeleteButton className ="button" id={post.post_id}/>
         </>
       ) : (
         <p>Loading...</p>

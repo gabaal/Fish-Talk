@@ -31,7 +31,7 @@ Created using create-next-app
 
 - [ ] Add a new /posts/:id/edit route that allows editing a post. Populate the form with the post data, and save changes by updating the post in the database with a server action.
 
-- [ ] Add a delete button to the post page that removes the post from the database.
+- [x] Add a delete button to the post page that removes the post from the database.
 
 - [ ] Add a new /posts/:id/comments/:id/edit route that allows editing a comment. Populate the form with the comment data, and save changes by updating the comment in the database with a server action.
 
