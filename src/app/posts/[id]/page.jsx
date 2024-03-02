@@ -21,9 +21,9 @@ export default async function PostPage({ params }) {
       
       {post ? (
         <>
-          <h1>Post {post.post_id}</h1>
-          <h2 className="title">{post.title}</h2>
-          <p className="content">{post.content}</p>
+          {/* <h1>Post</h1> */}
+          <h2>{post.title}</h2>
+          <p>{post.content}</p>
      
           {result.rows.map(comment => (
             <p key={comment.comment_id} className="comment">{comment.comment_text}</p> 

@@ -19,12 +19,15 @@ export default function NewCategoryPage() {
   }
   
   return (
+    <div>
+      <h1>Add a category</h1>
     <form action={handleSaveCategory} className="form">
-      <label htmlFor="category" className="label">Category</label>
+      <label htmlFor="category" className="label">Category name</label>
       <input id="category" name="category" type="text" className="input" required/>
       <button type="submit" className="button">Add Category</button>
       <Link className = "button" href="/categories">Back to Categories</Link>
     </form>
+    </div>
     
   )
 }

@@ -3,7 +3,7 @@ import { sql } from "@vercel/postgres"
 
 export default async function Posts({ searchParams}) {
   const posts = await sql`
-    SELECT posts.*, categories.category as category, LEFT(posts.content, 30) AS content_excerpt
+    SELECT posts.*, categories.category as category, LEFT(posts.content, 100) AS content_excerpt
     FROM Posts
     LEFT JOIN categories ON posts.category_id = categories.category_id
     ORDER BY LOWER (title) ASC

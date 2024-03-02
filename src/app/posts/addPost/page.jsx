@@ -20,6 +20,8 @@ export default function NewPostPage() {
   }
   
   return (
+    <div>
+    <h1 className="title">Add a new post</h1>
     <form action={handleSavePost} className="form">
       <label htmlFor="title" className="label">Title</label>
       <input id="title" name="title" type="text" className="input" required/>
@@ -28,6 +30,7 @@ export default function NewPostPage() {
       <button type="submit" className="button">Add Post</button>
       <Link className = "button" href="/posts">Back to Posts</Link>
     </form>
+    </div>
   )
 }
 

@@ -6,6 +6,7 @@ import Link from "next/link"
 
 export default function NewCommentPage({ params }) {
   
+  
   async function handleSaveComment(formData) {
     "use server"
 
@@ -20,11 +21,14 @@ export default function NewCommentPage({ params }) {
   }
   
   return (
+    <div>
+      <h1>Add a Comment</h1>
     <form action={handleSaveComment} className="form">
       <label htmlFor="comment" className="label">Comment</label>
       <input id="comment" name="comment" type="text" className="input" required/>
       <button type="submit" className="button">Add Comment</button>
       <Link className="button" href={`/posts/${params.id}`}>Back to Post</Link>
     </form>
+    </div>
   );
 }
