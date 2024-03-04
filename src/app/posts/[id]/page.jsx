@@ -17,10 +17,10 @@ export default async function PostPage({ params }) {
   const post = result.rows[0];
 
   return (
-    <div className="container">
+    <div className="postItems">
       
       {post ? (
-        <>
+        <div>
           {/* <h1>Post</h1> */}
           <h2>{post.title}</h2>
           <p>{post.content}</p>
@@ -31,7 +31,7 @@ export default async function PostPage({ params }) {
           <Link className="button"  href={`/posts/${params.id}/comments`}>Add a Comment</Link>
           <Link className="button"  href="/posts">Back to posts</Link>
           <DeleteButton className ="button" id={post.post_id}/>
-        </>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

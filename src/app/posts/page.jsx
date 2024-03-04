@@ -21,7 +21,7 @@ export default async function Posts({ searchParams}) {
       <Link  className="button" href="/posts/addPost">New Post</Link>
       <ul className="postList">
         {posts.rows.map((post) => (
-          <div key={post.post_id} className="postItem">
+          <div key={post.post_id} className="postItem ">
 
             <h2 className="postTitle">{post.title}</h2>
             <p className="postCategory">Category: {post.category}</p>
