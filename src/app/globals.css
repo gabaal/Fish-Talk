@@ -33,14 +33,14 @@ p {
 }
 
 a.button {
-    display: inline;
-    width: 1200px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    margin-bottom: 125px;
-    border-radius: 5px;
-    cursor: pointer;
+  display: inline;
+  width: 200px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  margin: 15px;
+  border-radius: 5px;
+  cursor: pointer;
   }
   
 .postCategory{
@@ -85,7 +85,7 @@ a.button {
   margin:auto;
   justify-content: center;
   align-items: center;
-  object-fit: scale-down;
+  object-fit:none;
   max-height:95vh;
   opacity: 0.7;
 }
@@ -141,10 +141,10 @@ button {
 .button {
   display: inline;
   width: 200px;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   background-color: #007bff;
   color: #fff;
-  margin: 15px;
+  /* margin: 15px; */
   border-radius: 5px;
   cursor: pointer;
 }
@@ -160,11 +160,3 @@ button:hover {
 .nav-link:hover {
   text-decoration: underline;
 }
-
-/* .container {
-  height: 92vh;
-  width: 100wh;
-  background-color: #c9d3dd;
-  align-self: center;
-  margin-left: 50px
-} */
